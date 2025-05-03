@@ -1,25 +1,41 @@
-import {createBrowserRouter} from "react-router-dom";
-import HomePage from "./app/views/Home.jsx";
+import { createBrowserRouter } from "react-router-dom";
+import { lazy } from "react";
 import Layout from "./app/views/Layout.jsx";
-import AboutPage from "./app/views/About.jsx";
-import ContactPage from "./app/views/Contacts.jsx";
-import ProjectsPage from "./app/views/Projects.jsx";
+
+// Replace direct imports with lazy imports
+const HomePage = lazy(() => import("./app/views/Home.jsx"));
+const AboutPage = lazy(() => {
+    console.log("Loading AboutPage");
+    return import("./app/views/About.jsx")
+});
+const ContactPage = lazy(() => import("./app/views/Contacts.jsx"));
+const ProjectsPage = lazy(() => import("./app/views/Projects.jsx"));
+
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Layout PageComponent={HomePage} routeInfo={'home'} />,
+        element: (
+            <Layout><HomePage /></Layout>
+        ),
     },
     {
         path: 'about',
-        element: <Layout PageComponent={AboutPage} routeInfo={'about'} />,
+        element: (
+            <Layout><AboutPage /></Layout>
+        ),
     },
-    {   path: 'contacts',
-        element: <Layout PageComponent={ContactPage} routeInfo={'contacts'} />,
+    {
+        path: 'contacts',
+        element: (
+            <Layout><ContactPage /></Layout>
+        ),
     },
-    {   path: 'projects',
-        element: <Layout PageComponent={ProjectsPage} routeInfo={'projects'} />,
-    }
+    {
+        path: 'projects',
+        element: <Layout><ProjectsPage /></Layout>,
+    },
+
 ]);
 
 export default router;

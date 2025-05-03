@@ -5,7 +5,7 @@ const Hero = ({ translation }) => {
     return (
         <section className="hero">
             <div className="hero__content">
-                <h1 className="hero__title">{translation.title}</h1>
+                <h1 className="hero__title" dangerouslySetInnerHTML={{ __html: translation.title }} />
                 <div className="hero__description">{translation.description}</div>
                 <a className="button button__primary" href="#contacts">
                     {translation.button} =&gt;

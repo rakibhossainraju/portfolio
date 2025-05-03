@@ -1,9 +1,8 @@
 import React from "react";
-import routes from "../consts/routes";
 import MediaIcon from "./MediaIcon";
 import {Link} from "react-router-dom";
 
-const Header = ({ headerTranslations }) => {
+const Header = () => {
     const paths = [
         {
             path: '/',
@@ -27,7 +26,7 @@ const Header = ({ headerTranslations }) => {
                 <span className="media-header__line"></span>
                 <div className="media-header__links">
                     {["discord", "github", "email"].map((name) => (
-                        <MediaIcon name={name} key={name} />
+                        <MediaIcon iconType={name} key={name} />
                     ))}
                 </div>
             </div>
@@ -51,13 +50,13 @@ const Header = ({ headerTranslations }) => {
                             </Link>
                         ))}
                     </div>
-                    <div className="dropdown">
-                        <span className="dropdown__label">en</span>
-                        <div className="dropdown__list">
-                            <div className="dropdown__option">ru</div>
-                            <div className="dropdown__option">ua</div>
-                        </div>
-                    </div>
+                    {/*<div className="dropdown">*/}
+                    {/*    <span className="dropdown__label">en</span>*/}
+                    {/*    <div className="dropdown__list">*/}
+                    {/*        <div className="dropdown__option">ru</div>*/}
+                    {/*        <div className="dropdown__option">ua</div>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </header>
