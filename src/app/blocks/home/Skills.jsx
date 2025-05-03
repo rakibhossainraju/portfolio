@@ -3,10 +3,10 @@ import Dots from "../../components/Dots";
 import SkillBlock from "../../components/SkillBlock";
 import skills from "../../consts/skills";
 
-const Skills = ({ t, t2 }) => {
+const Skills = ({ translation, t2 }) => {
     return (
         <section className="skills">
-            <h2 className="h2">{t.title}</h2>
+            <h2 className="h2">{translation.title}</h2>
             <div className="skills__content">
                 <div className="skills__illustrations illustrations">
                     <img

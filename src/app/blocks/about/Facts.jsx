@@ -1,12 +1,12 @@
 import React from "react";
 
-export default ({ t }) => {
+export default ({ facts }) => {
     return (
         <section className="facts">
-            <h2 className="h2">{t.title}</h2>
+            <h2 className="h2">{facts.title}</h2>
             <div className="facts__content">
                 <ul className="facts__list">
-                    {t.list.map((fact, index) => (
+                    {facts.list.map((fact, index) => (
                         <li className="fact" key={index}>
                             {fact}
                         </li>

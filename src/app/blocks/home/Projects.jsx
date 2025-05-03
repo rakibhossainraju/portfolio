@@ -1,13 +1,13 @@
 import React from "react";
 import ProjectList from "../../components/ProjectList";
 
-const Projects = ({ t, t2 }) => {
+const Projects = ({ translation, t2 }) => {
     return (
         <section className="projects">
             <div className="projects__header">
-                <h2 className="h2">{t.title}</h2>
+                <h2 className="h2">{translation.title}</h2>
                 <a className="projects__link" href="/projects">
-                    {t.button} ~~&gt;
+                    {translation.button} ~~&gt;
                 </a>
             </div>
             <ProjectList limit={3} t={t2} />

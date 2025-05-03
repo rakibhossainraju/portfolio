@@ -1,7 +1,12 @@
+import React from "react";
 import media from "../consts/media";
 
-export default ({ name }) => {
-    return <a href={media[name]} className="media">
-            <img src={`/images/icons/${name}.svg`} alt={name} className="media__icon"/>
+const MediaIcon = ({ iconType }) => {
+    return (
+        <a href={media[iconType]} className="media">
+            <img src={`/images/icons/${iconType}.svg`} alt={iconType} className="media__icon"/>
         </a>
+    );
 };
+
+export default MediaIcon;

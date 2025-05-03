@@ -1,9 +1,23 @@
 import React from "react";
 import routes from "../consts/routes";
 import MediaIcon from "./MediaIcon";
+import {Link} from "react-router-dom";
 
-const Header = ({ t }) => {
-    const paths = ["/", "/projects", "/about-me"];
+const Header = ({ headerTranslations }) => {
+    const paths = [
+        {
+            path: '/',
+            name: 'Home'
+        },
+        {
+            path: '/projects',
+            name: 'Projects'
+        },
+        {
+            path: '/about',
+            name: 'About-Me'
+        }
+    ];
 
     return (
         <header className="header">
@@ -20,21 +34,21 @@ const Header = ({ t }) => {
 
             <div className="container">
                 <div className="header__inner">
-                    <a className="logo" href="/">
+                    <Link className="logo" to="/">
                         <img className="logo__img" src="/images/logo.svg" alt="Elias logo" />
                         <span className="logo__name">Elias</span>
-                    </a>
+                    </Link>
                     <div className="header__links">
-                        {paths.map((path) => (
-                            <a
-                                href={path}
+                        {paths.map(({path, name}) => (
+                            <Link
+                                to={path}
                                 className={`header__link ${
                                     window.location.pathname === path ? "header__link_active" : ""
                                 }`}
                                 key={path}
                             >
-                                {t[routes[path].name]}
-                            </a>
+                                {name}
+                            </Link>
                         ))}
                     </div>
                     <div className="dropdown">

@@ -12,14 +12,14 @@ const contacts = [
     }
 ];
 
-const Contacts = ({ t }) => {
+const Contacts = ({ translation }) => {
     return (
         <section className="contacts" id="contacts">
-            <h2 className="h2">{t.title}</h2>
+            <h2 className="h2">{translation.title}</h2>
             <div className="contacts__content">
-                <p className="contacts__description">{t.text}</p>
+                <p className="contacts__description">{translation.text}</p>
                 <div className="contacts__media">
-                    <h3 className="contacts__title">{t.media}</h3>
+                    <h3 className="contacts__title">{translation.media}</h3>
                     <div className="contacts__list">
                         {contacts.map((contact) => (
                             <a className="contact" href={media[contact.name]} key={contact.name}>

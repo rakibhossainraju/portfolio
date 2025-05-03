@@ -1,6 +1,8 @@
 import React from "react";
-import Path from "../components/Path.js";
+import Path from "../components/Path.jsx";
 
-export default ({ t }) => {
-    return <Path description={t.description} />;
+const ContactPage = ({ pageTranslations }) => {
+    return <Path description={pageTranslations.description} />;
 };
+
+export default ContactPage;

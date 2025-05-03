@@ -2,7 +2,7 @@ import React from "react";
 import MediaIcon from "./MediaIcon";
 import media from "../consts/media.js";
 
-const Footer = ({ t }) => {
+const Footer = ({ footerTranslations }) => {
     return (
         <footer className="footer">
             <div className="container">
@@ -17,18 +17,18 @@ const Footer = ({ t }) => {
                                 {media.emailRaw}
                             </a>
                         </div>
-                        <p className="footer__description">{t.description}</p>
+                        <p className="footer__description">{footerTranslations.description}</p>
                     </div>
                     <div className="footer__media">
-                        <div className="footer__title">{t.media}</div>
+                        <div className="footer__title">{footerTranslations.media}</div>
                         <div className="footer__list">
-                            {["figma", "github", "discord"].map((name) => (
-                                <MediaIcon name={name} key={name} />
+                            {["figma", "github", "discord"].map((iconType) => (
+                                <MediaIcon iconType={iconType} key={iconType} />
                             ))}
                         </div>
                     </div>
                 </div>
-                <div className="footer__copyright">© {t.copyright}</div>
+                <div className="footer__copyright">© {footerTranslations.copyright}</div>
             </div>
         </footer>
     );

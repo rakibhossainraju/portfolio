@@ -5,18 +5,20 @@ import Projects from "../blocks/home/Projects";
 import Skills from "../blocks/home/Skills";
 import About from "../blocks/home/About";
 import Contacts from "../blocks/home/Contacts";
-
 import "../../styles/pages/home.sass";
 
-export default ({ t, locale }) => {
+
+const HomePage = ({ pageTranslations, localeData }) => {
     return (
         <>
-            <Hero t={t.hero} />
-            <Quote t={t.quote} />
-            <Projects t={t.projects} t2={locale.projects} />
-            <Skills t={t.skills} t2={locale.skills} />
-            <About t={t.about} />
-            <Contacts t={t.contacts} />
+            <Hero translation={pageTranslations.hero} />
+            <Quote translation={pageTranslations.quote} />
+            <Projects translation={pageTranslations.projects} t2={localeData.projects} />
+            <Skills translation={pageTranslations.skills} t2={localeData.skills} />
+            <About translation={pageTranslations.about} />
+            <Contacts translation={pageTranslations.contacts} />
         </>
     );
 };
+
+export default HomePage;

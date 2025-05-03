@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { getLocale } from "../helpers/localeHandler";
 
-const Layout = ({ Component, path }) => {
+const Layout = ({ PageComponent, routeInfo }) => {
     const [locale, setLocale] = useState(null);
     
     useEffect(() => {
@@ -18,14 +18,13 @@ const Layout = ({ Component, path }) => {
     if (!locale) {
         return null; // Or a loading spinner
     }
-
     return (
         <>
-            <Header t={locale.header} />
+            <Header headerTranslations={locale.header} />
             <div className="container content">
-                <Component t={locale.pages[path.name]} locale={locale} />
+                <PageComponent pageTranslations={locale.pages[routeInfo]} localeData={locale} />
             </div>
-            <Footer t={locale.footer} />
+            <Footer footerTranslations={locale.footer} />
         </>
     );
 };

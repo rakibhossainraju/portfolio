@@ -1,10 +1,10 @@
 import React from "react";
 
-const Quote = ({ t }) => {
+const Quote = ({ translation }) => {
     return (
         <figure className="quote">
-            <blockquote className="quote__text">{t.text}</blockquote>
-            <figcaption className="quote__author">{t.author}</figcaption>
+            <blockquote className="quote__text">{translation.text}</blockquote>
+            <figcaption className="quote__author">{translation.author}</figcaption>
         </figure>
     );
 };
