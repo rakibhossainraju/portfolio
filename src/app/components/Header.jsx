@@ -35,7 +35,7 @@ const Header = () => {
                 <div className="header__inner">
                     <Link className="logo" to="/">
                         <img className="logo__img" src="/images/logo.svg" alt="Elias logo" />
-                        <span className="logo__name">Elias</span>
+                        <span className="logo__name">Rakib Hossain Raju</span>
                     </Link>
                     <div className="header__links">
                         {paths.map(({path, name}) => (
