@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -8,10 +7,10 @@
   --color-lead: #4a4a44;     /* Secondary (AAA Contrast) */
   --color-structural: #e2e0d5; /* Accent/Borders */
 
-  /* 2. Fonts - Using your industrial pair */
-  --font-sans: "Inter", "sans-serif";
-  --font-body: "Satoshi", "sans-serif";
-  --font-mono: "JetBrains Mono", "monospace";
+  /* 2. Fonts - CSS variables injected by next/font at runtime */
+  --font-sans: var(--font-inter), "sans-serif";
+  --font-body: var(--font-satoshi), "sans-serif";
+  --font-mono: var(--font-jetbrains-mono), "monospace";
 
   /* 3. Custom Spacing & Scale (Optional) */
   --spacing-spec: 0.5rem;
