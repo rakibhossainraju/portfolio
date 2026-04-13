@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* 1. Colors - Mapping your specific palette */
+  --color-base: #faf9f5;
+  --color-ink: #1d1d1b;      /* Primary Ink */
+  --color-lead: #4a4a44;     /* Secondary (AAA Contrast) */
+  --color-structural: #e2e0d5; /* Accent/Borders */
+
+  /* 2. Fonts - Using your industrial pair */
+  --font-sans: "Inter", "sans-serif";
+  --font-body: "Satoshi", "sans-serif";
+  --font-mono: "JetBrains Mono", "monospace";
+
+  /* 3. Custom Spacing & Scale (Optional) */
+  --spacing-spec: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-base text-lead font-body antialiased;
+  }
+
+  h1, h2, h3 {
+    @apply text-ink font-sans font-bold tracking-tighter;
+  }
+}
+
+@layer components {
+  /* Custom Type Scale Utilities */
+  .text-hero {
+    font-size: 5.61rem;
+    line-height: 1;
+  }
+
+  .text-section {
+    font-size: 3.15rem;
+    line-height: 1.1;
+  }
+  
+  .text-prose {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  .text-tech {
+    @apply font-mono text-[1rem];
+    line-height: 1.5;
+  }
+
+  .text-label {
+    @apply font-mono text-[0.75rem] uppercase tracking-widest;
+  }
+}
